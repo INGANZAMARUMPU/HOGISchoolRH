@@ -1,0 +1,12 @@
+*.pyc
+*.pyd
+????_*.py
+*.sqlite3*
+*.png
+*.jpeg
+*.jpg
+
+**__pycache__
+
+/dist
+/static
