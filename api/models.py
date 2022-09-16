@@ -26,3 +26,4 @@ class Conge(models.Model):
 	debut = models.DateField()
 	fin = models.DateField()
 	payee = models.BooleanField(default=True)
+	payee = models.BooleanField(default=True)
