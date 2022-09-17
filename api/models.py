@@ -6,6 +6,9 @@ class Niveau(models.Model):
 	nom = models.CharField(max_length=32)
 	poid = models.FloatField()
 
+	def __str__(self):
+		return self.nom
+
 class Employee(models.Model):
 	id = models.AutoField(primary_key=True)
 	nom = models.CharField(max_length=32)
