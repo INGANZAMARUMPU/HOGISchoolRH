@@ -2,15 +2,21 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
 from rest_framework.authentication import SessionAuthentication
 from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.pagination import PageNumberPagination
 
 from .models import *
 from .serializers import *
+
+class DeuxParPage(PageNumberPagination):
+    page_size = 2
+    max_page_size = 20
 
 class NiveauViewSet(viewsets.ModelViewSet):
     queryset = Niveau.objects.all()
     serializer_class = NiveauSerializer
     permission_classes = [IsAdminUser]
     authentication_classes = [JWTAuthentication, SessionAuthentication]
+    pagination_class = DeuxParPage
 
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
