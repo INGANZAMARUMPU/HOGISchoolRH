@@ -20,23 +20,23 @@ class NiveauViewSet(viewsets.ModelViewSet):
     queryset = Niveau.objects.all()
     serializer_class = NiveauSerializer
     permission_classes = [IsAdminUser]
-    authentication_classes = [JWTAuthentication, SessionAuthentication]
+    authentication_classes = [JWTAuthentication]
     pagination_class = DeuxParPage
 
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
     permission_classes = [IsAdminUser]
-    authentication_classes = [JWTAuthentication, SessionAuthentication]
+    authentication_classes = [JWTAuthentication]
 
 class PresenceViewSet(viewsets.ModelViewSet):
     queryset = Presence.objects.all()
     serializer_class = PresenceSerializer
     permission_classes = [IsAuthenticated]
-    authentication_classes = [JWTAuthentication, SessionAuthentication]
+    authentication_classes = [JWTAuthentication]
 
 class CongeViewSet(viewsets.ModelViewSet):
     queryset = Conge.objects.all()
     serializer_class = CongeSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
-    authentication_classes = [JWTAuthentication, SessionAuthentication]
+    authentication_classes = [JWTAuthentication]
