@@ -1,11 +1,16 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
 from rest_framework.authentication import SessionAuthentication
-from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.pagination import PageNumberPagination
+
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .models import *
 from .serializers import *
+
+class TokenPairView(TokenObtainPairView):
+    serializer_class = TokenPairSerializer
 
 class DeuxParPage(PageNumberPagination):
     page_size = 2

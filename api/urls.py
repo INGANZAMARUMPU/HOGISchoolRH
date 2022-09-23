@@ -12,4 +12,5 @@ router.register('conge', CongeViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('login/', TokenPairView.as_view())
 ]
